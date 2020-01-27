@@ -1,0 +1,28 @@
+﻿@using LanchesPage.Models;
+@*@model IEnumerable<Lanche>*@
+@model LancheListViewModel
+
+@*Agora a View é tipada mas não mais no Model, mas na ViewModel*@
+<div><h2>@Model.CategoriaAtual</h2></div>
+
+<div class="container">
+    @foreach (var lanche in Model.Lanches)
+    {
+        @Html.Partial("_LancheResumo", lanche);
+
+
+
+        @*<div class= "col-md-4">
+                <div class="img-thumbnail">
+                    <img src="@lanche.ImagemURL" class="img-rounded" alt=""/>
+                </div>
+                <div class="figure-caption">
+                    <h3 class="text-md-right" Preco: @lanche.Preco.ToString("c")></h3>
+                    <h3>Lanche: @lanche.Nome</h3>
+                    <p>@lanche.DescricaoCurta</p>
+                </div>
+
+            </div>*@
+    }
+</div>
+
